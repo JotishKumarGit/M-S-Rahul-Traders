@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M/S Rahul Traders - Premium Paddy Exporter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #8B6F47;
+            --secondary: #D4A574;
+            --accent: #C17817;
+            --dark: #3D2817;
+            --light: #FAF5EF;
+            --cream: #E8DCC8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Topbar */
+        .topbar {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .topbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        /* Header */
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary) !important;
+        }
+
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(22, 21, 21, 0.95), rgba(36, 35, 34, 0.9)), url('./assets/img/Paddy.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* background: url('./assets/img/paddy_new.jpg') repeat; */
+            animation: float 5s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-custom {
+            background: var(--accent);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            background: #e76f51;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .about-img {
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .about-img:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-box {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-img {
+            height: 250px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .why-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin: 15px 0;
+            transition: all 0.3s;
+        }
+
+        .why-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .why-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 15px 0;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #97bc62, #2c5f2d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 95, 45, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin: 15px 0;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-date {
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: none;
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            height: 100%;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+            color: var(--accent);
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer h5 {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fas fa-phone"></i> <a href="tel:9939839964">+91 9939839964</a>
+                    <i class="fas fa-envelope ms-3"></i> <a
+                        href="mailto:info@rahultraders.com">example@rahultraders.com</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span>Premium Quality Paddy Exporters At post Chapaith, P.S-Goraul, Dist - vaishali Bihar India
+                        844112
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-seedling"></i> M/S Rahul Traders</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h1>Premium Quality Paddy</h1>
+                    <p>Leading Exporter, Manufacturer & Supplier of High-Grade Paddy</p>
+                    <p class="mb-4">Delivering Excellence in Agriculture | Trusted Worldwide</p>
+                    <a href="#contact" class="btn btn-custom">Get Quote <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div style="font-size: 15rem; color: rgba(255,255,255,0.2);"><img src="assets/img/Paddy.jpg"
+                            height="auto" width="100%"
+                            style="border-radius: 20px; border: 4px solid rgb(241, 241, 241); " alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">About M/S Rahul Traders</h2>
+                <p class="text-muted mt-4">Your Trusted Partner in Premium Paddy Supply</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <img src="assets/img/Maize.jpg" alt="About Us" class="img-fluid about-img">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4" style="color: var(--primary);">Leading the Way in Quality Paddy Export</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">M/S Rahul Traders is a renowned name in the paddy
+                        export industry, committed to delivering premium quality paddy to clients worldwide. With years
+                        of expertise and dedication, we have established ourselves as trusted exporters, manufacturers,
+                        and suppliers.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">Our commitment to quality, timely delivery, and
+                        customer satisfaction has made us the preferred choice for businesses globally. We maintain
+                        strict quality control measures to ensure only the finest paddy reaches our customers.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                                <h5>Certified Quality</h5>
+                                <p>All our products meet international quality standards</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                                <h5>Global Reach</h5>
+                                <p>Exporting to multiple countries worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Products</h2>
+                <p class="text-muted mt-4">Premium Quality Paddy for All Your Needs</p>
+            </div>
+            <div class="row">
+
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="assets/img/paddy_new.jpg" width="100%" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h4>Paddy</h4>
+                            <p>Premium quality raw paddy sourced from the finest farms. Perfect moisture content and
+                                high yield potential.</p>
+
+                            <a href="#contact" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="assets/img/Maize.jpg" width="100%" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h4>Maize</h4>
+                            <p>100% organic maize grown without chemicals or pesticides. Certified organic and
+                                environmentally friendly.</p>
+
+                            <a href="#contact" class="btn btn-primary mt-3">View Details </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="assets/img/Rice.jpg" width="100%" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h4>Rice</h4>
+                            <p>Finest quality basmati paddy with exceptional aroma and long grains. Ideal for premium
+                                rice production.</p>
+
+                            <a href="#contact" class="btn btn-primary mt-3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="why-choose">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title text-white">Why Choose Us</h2>
+                <p class="text-white mt-4">Excellence in Every Grain</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="fas fa-award"></i></div>
+                        <h4>Premium Quality</h4>
+                        <p>We ensure only the highest quality paddy reaches our customers through rigorous quality
+                            checks</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+                        <h4>Timely Delivery</h4>
+                        <p>Our efficient logistics ensure your orders reach you on time, every time, anywhere in the
+                            world</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <h4>Competitive Prices</h4>
+                        <p>Best quality at the most competitive prices in the market without compromising on standards
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="why-box">
+                        <div class="why-icon"><i class="fas fa-headset"></i></div>
+                        <h4>24/7 Support</h4>
+                        <p>Our dedicated team is always available to assist you with queries and support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="text-muted mt-4">Glimpses of Our Quality Products and Operations</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="assets/img/Maize.jpg" alt="">
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 style="color: white;">Maize</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="assets/img/Paddy.jpg" alt="">
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 style="color: white;">Paddy</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="assets/img/g_1.jpeg" alt="">
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 style="color: white;">Paddy</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="assets/img/g_2.jpeg" alt="">
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 style="color: white;">Rice</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="assets/img/G_3.jpeg" alt="">
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 style="color: white;">Rice</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="assets/img/G_4.jpeg" alt="">
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4 style="color: white;">Rice</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Latest News & Blog</h2>
+                <p class="text-muted mt-4">Stay Updated with Agriculture Industry Trends</p>
+            </div>
+            <div class="row">
+
+                <!-- Blog 1 - Maize -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/img/Maize.jpg" height="210px" width="100%" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <p class="blog-date"><i class="far fa-calendar"></i> December 10, 2025</p>
+                            <h4>Maize</h4>
+                            <p>Maize-related informative content goes here...</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600;">Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 2 - Paddy -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/img/paddy_new.jpg" height="210px" width="100%" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <p class="blog-date"><i class="far fa-calendar"></i> December 8, 2025</p>
+                            <h4>Paddy</h4>
+                            <p>Paddy-related informative content goes here...</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600;">Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 3 - Rice -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="assets/img/Rice.jpg" height="210px" width="100%" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <p class="blog-date"><i class="far fa-calendar"></i> December 5, 2025</p>
+                            <h4>Rice</h4>
+                            <p>Rice-related informative content goes here...</p>
+                            <a href="#" style="color: var(--secondary); font-weight: 600;">Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="text-muted mt-4">Get in Touch for Premium Paddy Supply</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mb-4" data-aos="fade-right">
+                    <div class="contact-form">
+                        <h3 class="mb-4" style="color: var(--primary);">Send us a Message</h3>
+
+                        <form id="whatsappContactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" id="email" class="form-control" placeholder="Your Email"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="tel" id="phone" class="form-control" placeholder="Phone Number"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                                </div>
+                            </div>
+
+                            <textarea id="message" class="form-control" rows="5" placeholder="Your Message"
+                                required></textarea>
+
+                            <button type="submit" class="btn btn-custom mt-3">
+                                Send Message <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4" data-aos="fade-left">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h6>Phone</h6>
+                                <a href="tel:9939839964" style="color: white;">+91 9939839964</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h6>Email</h6>
+                                <a href="mailto:info@rahultraders.com" style="color: white;">info@rahultraders.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h6>Address</h6>
+                                <p>M/S Rahul Traders<br>Delhi, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h6>Business Hours</h6>
+                                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="map-container" data-aos="fade-up">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14354.229479139329!2d85.40942735306622!3d25.91691758584009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPremium%20Quality%20Paddy%20Exporters%20At%20post%20Chapaith%2C%20P.S-Goraul%2C%20Dist%20-%20vaishali%20Bihar%20India%20844112!5e0!3m2!1sen!2sin!4v1765448816142!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Send Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="enquiryForm">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="text" id="phone" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Subject</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Message</label>
+                                <textarea id="message" class="form-control" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Submit</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- enquiry modal scripts -->
+    <script>
+        document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+
+            let whatsappMessage =
+                "Enquiry Details:%0A" +
+                "Name: " + name + "%0A" +
+                "Email: " + email + "%0A" +
+                "Phone: " + phone + "%0A" +
+                "Subject: " + subject + "%0A" +
+                "Message: " + message;
+
+            window.open("https://wa.me/9939839964?text=" + whatsappMessage, "_blank");
+        });
+    </script>
+
+    <!-- goes on whatsapp  -->
+    <script>
+        document.getElementById("whatsappContactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+
+            let whatsappMsg =
+                "New Enquiry:%0A" +
+                "-------------------------%0A" +
+                "Name: " + name + "%0A" +
+                "Email: " + email + "%0A" +
+                "Phone: " + phone + "%0A" +
+                "Subject: " + subject + "%0A" +
+                "Message: " + message + "%0A";
+
+            window.open("https://wa.me/9939839964?text=" + whatsappMsg, "_blank");
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5><i class="fas fa-seedling"></i> M/S Rahul Traders</h5>
+                    <p>Leading exporter, manufacturer, and supplier of premium quality paddy. Committed to delivering
+                        excellence in agriculture products worldwide.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#products">Products</a>
+                    <a href="#why-us">Why Us</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Our Services</h5>
+                    <a href="#">Paddy Export</a>
+                    <a href="#">Manufacturing</a>
+                    <a href="#">Supply Chain</a>
+                    <a href="#">Quality Testing</a>
+                    <a href="#">Consultation</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-phone"></i> +91 9939839964</p>
+                    <p><i class="fas fa-envelope"></i> info@rahultraders.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Premium Quality Paddy Exporters At post Chapaith,
+                        P.S-Goraul, Dist - vaishali Bihar India
+                        844112</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 M/S Rahul Traders. All Rights Reserved. | Designed with <i class="fas fa-heart"
+                        style="color: var(--accent);"></i><a href="https://www.trade4export.com/">Trade4Export</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- for others scripts -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Add animation to numbers or counters if needed
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+
+</body>
+
+</html>
