@@ -53,58 +53,64 @@
         </div>
     </nav>
 
+    <!-- bread crumb -->
     <header class="page-header">
         <div class="container">
-            <h1>About Us</h1>
+            <h1>Maize</h1>
             <nav class="breadcrumb">
                 <a href="#">Home</a>
                 <span>/</span>
-                <span>About Us</span>
+                <span>Maize</span>
             </nav>
         </div>
     </header>
 
+    <!-- products details -->
+    <div class="container py-5 my-5">
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-10">
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">About M/S Rahul Traders</h2>
-                <p class="text-muted mt-4">Your Trusted Partner in Premium Paddy Supply</p>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4" data-aos="fade-right">
-                    <img src="assets/img/Paddy.jpg" alt="About Us" class="img-fluid about-img">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h3 class="mb-4" style="color: var(--primary);">Leading the Way in Quality Paddy Export</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">M/S Rahul Traders is a renowned name in the paddy
-                        export industry, committed to delivering premium quality paddy to clients worldwide. With years
-                        of expertise and dedication, we have established ourselves as trusted exporters, manufacturers,
-                        and suppliers.</p>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">Our commitment to quality, timely delivery, and
-                        customer satisfaction has made us the preferred choice for businesses globally. We maintain
-                        strict quality control measures to ensure only the finest paddy reaches our customers.</p>
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <div class="feature-box">
-                                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
-                                <h5>Certified Quality</h5>
-                                <p>All our products meet international quality standards</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-box">
-                                <div class="feature-icon"><i class="fas fa-globe"></i></div>
-                                <h5>Global Reach</h5>
-                                <p>Exporting to multiple countries worldwide</p>
-                            </div>
+                <div class="row g-4 align-items-center product-card animate__animated animate__fadeInUp p-3">
+
+                    <!-- Left Side Image -->
+                    <div class="col-lg-5 col-md-6">
+                        <img src="assets/img/Maize.jpg" alt="Maize"
+                            class="img-fluid rounded shadow-sm animate__animated animate__zoomIn">
+                    </div>
+
+                    <!-- Right Side Details -->
+                    <div class="col-lg-7 col-md-6">
+                        <h2 class="mb-3 fw-bold">High-Quality Maize</h2>
+
+                        <p class="text-muted">
+                            Our premium-quality maize is sourced from the best farmlands, ensuring natural freshness,
+                            purity, and top-grade nutrition. Rich in carbohydrates and essential nutrients, this maize
+                            is ideal for food processing, animal feed, and commercial industries.
+                        </p>
+
+                        <h5 class="mt-4 fw-bold">Product Features:</h5>
+                        <ul>
+                            <li>Fresh and naturally grown maize</li>
+                            <li>High nutritional value with rich carbohydrates</li>
+                            <li>Clean, dried, and impurity-free</li>
+                            <li>Suitable for food processing & animal feed</li>
+                            <li>Moisture-controlled and perfectly stored</li>
+                        </ul>
+
+                        <div class="mt-4 py-5">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#enquiryModal"
+                                class="btn btn-primary enquiry-btn animate__animated animate__pulse animate__infinite">
+                                Enquiry Now
+                            </a>
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
+    <!-- end pro details -->
 
     <!-- Enquiry Modal -->
     <div class="modal fade" id="enquiryModal" tabindex="-1" aria-hidden="true">
@@ -154,6 +160,7 @@
             </div>
         </div>
     </div>
+
     <!-- enquiry modal scripts -->
     <script>
         document.getElementById("enquiryForm").addEventListener("submit", function (e) {
